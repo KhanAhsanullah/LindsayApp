@@ -7,7 +7,14 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "reverse": "adb reverse tcp:8081 tcp:8081",
+    "devices": "adb devices && adb reverse tcp:8081 tcp:8081",
+    "build": "cd android && ./gradlew clean && ./gradlew assembleRelease",
+    "debugAndroid": "cd android && ./gradlew clean && cd .. && yarn android",
+    "debugIos": "cd ios && pod install && cd .. && yarn ios",
+    "pod": "cd ios && pod install && cd ..",
+    "clean": "cd android && ./gradlew clean && cd .."
   },
   "dependencies": {
     "react": "18.3.1",
@@ -33,5 +40,5 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@1.22.22"
 }
